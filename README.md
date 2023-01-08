@@ -109,3 +109,4 @@ http://localhost:8443
 [^3]: https://www.mongodb.com/docs/v3.4/tutorial/install-mongodb-on-debian/
 [^4]: https://itsfoss.com/solve-gpg-error-signatures-verified-ubuntu/
 [^5]: https://packages.ubuntu.com/bionic/amd64/libssl1.0.0/download
+[^6:] How to remane a Linux system https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/
