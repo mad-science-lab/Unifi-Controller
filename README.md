@@ -15,7 +15,7 @@ DRAFT January 2023
 
 Unifi Repository [^1]
 ```
-echo 'deb {trusted=yes] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/unifi-install.list
+echo 'deb [trusted=yes] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/unifi-install.list
 ```
 ### MongoDB Repositories
 Debian [^3]
