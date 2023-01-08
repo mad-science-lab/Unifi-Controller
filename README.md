@@ -10,13 +10,6 @@ DRAFT January 2023
 		- https://packages.ubuntu.com/bionic/amd64/libssl1.0.0/download
 	- Mongo-db-org 3.4
 	
-
-## Pre-Work: Create a list file
-
-Unifi Repository [^1]
-```
-echo 'deb [trusted=yes] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee -a /etc/apt/sources.list.d/unifi-install.list
-```
 ### MongoDB Repositories
 Debian [^3]
 ```
@@ -30,21 +23,23 @@ Ubuntu 16.04 [^2]
 ```
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
 ```
-Ubuntu 22.04 (UNTESTED, NO SOURCE; This is a guess...is it jammy or jellyfish)
-```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
-```
+* also works with Ubuntu 22.04
+
 
 #### Reload the package database
 ```
 sudo apt-get update
 ```
 
-
 ## Install libssl1.0.0*
+
+<b>OPTIONAL:</b> Create a directory to store the libssl1.0.0 deb file.
+```
+sudo mkdir /etc/install.my && cd /etc/install.my
+```
 Download libssl1.0.0 
 ```
-wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
+sudo wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
 ```
 Install SSL 1.0  :(
 ```
@@ -53,11 +48,12 @@ sudo apt install ./libssl1.0.0_1.0.2n-1ubuntu5.10_amd64.deb
 ## Install Mongo DB
 Add the GPG key [^2][^3] 
 ```
-wget -qO - https://www.mongodb.org/static/pgp/server-3.4.asc | sudo apt-key add - </b>
+wget -qO - https://www.mongodb.org/static/pgp/server-3.4.asc | sudo apt-key add -
 ```
-If you get an error [^4]
-
-
+May need to run update????
+```
+sudo apt update && sudo apt upgrade
+```
 Next install MongoDB. You added the repository in prework and SSL 1.0 is prerequisite.[^2][^3]
 ```
 sudo apt-get install -y mongodb-org
@@ -89,6 +85,10 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 
 4. Install and upgrade the UniFi Network application.
 
+<b>OPTIONAL:</b> Install Openjdk-11
+
+sudo apt install openjdk-11-jre-headless
+
 ```
 sudo apt-mark hold openjdk-11-*
 ```
@@ -98,9 +98,8 @@ sudo apt-get update && sudo apt-get install unifi -y
 ```
 
 ## Load Unifi Controller
-```
-http://localhost:8443
-```
+
+https://localhost:8443
 
 
 
