@@ -32,7 +32,7 @@ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb
 ```
 Ubuntu 22.04 (UNTESTED, NO SOURCE; This is a guess...is it jammy or jellyfish)
 ```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu%20jammy/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
 ```
 
 #### Reload the package database
