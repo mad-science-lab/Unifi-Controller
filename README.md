@@ -15,24 +15,24 @@ DRAFT January 2023
 
 Unifi Repository [^1]
 ```
-echo 'deb [trusted=yes] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/unifi-install.list
+echo 'deb [trusted=yes] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee -a /etc/apt/sources.list.d/unifi-install.list
 ```
 ### MongoDB Repositories
 Debian [^3]
 ```
-echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" | sudo tee /etc/apt/sources.list.d/unifi-install.list 
+echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
 ```
 Ubuntu 14.04 [^2]
 ```
-echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/unifi-install.list
+echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list
 ```
 Ubuntu 16.04 [^2]
 ```
-echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/unifi-install.list 
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
 ```
 Ubuntu 22.04 (UNTESTED, NO SOURCE; This is a guess...is it jammy or jellyfish)
 ```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu%20jammy/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/unifi-install.list 
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu%20jammy/mongodb-org/3.4 multiverse" | sudo tee -a /etc/apt/sources.list.d/unifi-install.list 
 ```
 
 #### Reload the package database
